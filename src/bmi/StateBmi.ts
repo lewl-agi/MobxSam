@@ -4,7 +4,7 @@
 /**
  * Created by lewl on 11/5/2016.
  */
-import {observable, computed} from 'mobx';
+import {observable, computed, action} from 'mobx';
 import {ActionsBmi} from "./ActionsBmi";
 
 // Compute the State Representation.
@@ -19,7 +19,7 @@ export class StateBmi {
         this.actions = a;
     }
 
-    representation(model) {
+     @action representation(model) {
         console.log("Model", model);
         this.height = parseInt(model.height);
         this.weight = parseInt(model.weight);

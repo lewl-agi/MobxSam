@@ -1,7 +1,7 @@
 /**
  * Created by lewl on 11/5/2016.
  */
-import {observable, computed} from 'mobx';
+import {observable, computed, action} from 'mobx';
 import {Actions} from "./Actions";
 import {COUNTER_MAX} from "./consts";
 
@@ -19,7 +19,8 @@ export class State {
         this.actions = a;
     }
 
-    representation(model) {
+    // Here we change observable state:
+    @action representation(model) {
         console.log("Model", model);
         this._counter = model.counter;
         this._started = model.started;

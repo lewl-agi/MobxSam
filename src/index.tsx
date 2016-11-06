@@ -1,3 +1,4 @@
+import {useStrict} from 'mobx';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
@@ -13,6 +14,7 @@ import {ActionsBmi} from "./bmi/ActionsBmi";
 import {ModelBmi} from "./bmi/ModelBmi";
 import {StateBmi} from "./bmi/StateBmi";
 
+useStrict(true);
 // Instantiating the SAM pattern
 const {state:stateLauncher} = SAMFactory.instance(Actions, Model, State);
 
