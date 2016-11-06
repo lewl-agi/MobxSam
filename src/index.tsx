@@ -14,14 +14,12 @@ import {ModelBmi} from "./bmi/ModelBmi";
 import {StateBmi} from "./bmi/StateBmi";
 
 // Instantiating the SAM pattern
-const {state} = SAMFactory.instance(Actions, Model, State);
-const stateLauncher = state;
+const {state:stateLauncher} = SAMFactory.instance(Actions, Model, State);
 
-const {state} = SAMFactory.instance(ActionsBmi, ModelBmi, StateBmi);
-const stateBmi = state;
+const {state:stateBmi} = SAMFactory.instance(ActionsBmi, ModelBmi, StateBmi);
 
 ReactDOM.render(
     <div>
-    <RocketLauncherView stateRepresentation={stateLauncher}/>
+        <RocketLauncherView stateRepresentation={stateLauncher}/>
         <Bmi stateRepresentation={stateBmi}></Bmi>
     </div>, document.getElementById('root'));

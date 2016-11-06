@@ -12,10 +12,15 @@ export class Bmi extends React.Component<{stateRepresentation: StateBmi}, {}> {
     render() {
         return (
             <div>
-                <label>Weight</label><input type="range"/>
+                <label>Weight</label><input type="range" onChange={this.onWeightChangeHandler.bind(this)}/>
                 <label>Height</label><input type="range"/>
-                <h2>BMI</h2>
+                <h2>BMI: {this.props.stateRepresentation.bmi}</h2>
             </div>
         )
+    }
+
+    onWeightChangeHandler(evt) {
+        evt.preventDefault();
+        this.props.stateRepresentation.actions.weightChange({weight:evt.target.value});
     }
 }

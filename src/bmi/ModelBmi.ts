@@ -17,7 +17,12 @@ export class ModelBmi {
 
     // This function is called by actions. See SamFactory for wiring.
     present(data) {
-
+       if (data.weight){
+           this.model.weight = data.weight;
+       }
+       if (data.height){
+           this.model.height = data.height;
+       }
         this.state.stateRender(this.model);
     }
 }

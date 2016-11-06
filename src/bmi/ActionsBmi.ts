@@ -18,6 +18,13 @@ export class ActionsBmi {
         this._present = present;
     }
 
+    // Actions
+    weightChange(data, present?: (data: any) => void) {
+        console.log("presenting weight change", data);
+        present = present || this._present;
+        present(data)
+    }
+
     calcBmi(data, present?: (data: any) => void) {
         present = present || this._present;
         present(data);

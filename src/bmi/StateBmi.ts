@@ -21,8 +21,8 @@ export class StateBmi {
 
     representation(model) {
         console.log("Model", model);
-        this.height = model.height;
-        this.weight = model.weight;
+        this.height = parseInt(model.height);
+        this.weight = parseInt(model.weight);
         }
 
     // Derive the current state of the system
