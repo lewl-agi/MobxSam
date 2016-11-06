@@ -23,13 +23,17 @@ export class StateBmi {
         console.log("Model", model);
         this.height = parseInt(model.height);
         this.weight = parseInt(model.weight);
-        }
+    }
 
     // Derive the current state of the system
     @computed get bmi() {
-        return (this.height * this.weight);
+        //  To work out your BMI:
+        // divide your weight in kilograms (kg) by your height in metres (m)
+        // then divide the answer by your height again to get your BMI.
+        let height = this.height * 0.0254;
+        let weight = this.weight * 0.453592;
+        return (weight / height) / height;
     }
-
 
 
 // Next action predicate, derives whether

@@ -19,8 +19,7 @@ export class ActionsBmi {
     }
 
     // Actions
-    weightChange(data, present?: (data: any) => void) {
-        console.log("presenting weight change", data);
+    weightOrHeightChange(data, present?: (data: any) => void) {
         present = present || this._present;
         present(data)
     }
