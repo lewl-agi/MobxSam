@@ -18,12 +18,12 @@ export class SAMFactory {
 
         // D) Give actions a function to present data to the model.
         // A function that returns a function which accepts data and passes it to the model's present function.
-        function present(model) {
-            let _model = model;
-            return function (data: any) {
-                _model.present(data);
+        let present = model => {
+            return  (data: any) => {
+                model.present(data);
             }
         }
+
         actions.setPresent(present(model));
 
         return {state, actions, model};

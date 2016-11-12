@@ -15,8 +15,15 @@ export class Bmi extends React.Component<{stateRepresentation: StateBmi}, {}> {
         let weight = this.props.stateRepresentation.weight;
         return (
             <div>
-                <label>Weight-{weight}</label><input type="range" min='100' max='275' onChange={this.onWeightChangeHandler.bind(this)}/>
-                <label>Height-{height}</label><input type="range" min='60' max='84' onChange={this.onHeightChangeHandler.bind(this)}/>
+                <label>Weight-{weight}</label><input type="range"
+                                                     min='100'
+                                                     max='275'
+                                                     onChange={this.onWeightChangeHandler.bind(this)}/>
+
+                <label>Height-{height}</label><input type="range"
+                                                     min='60'
+                                                     max='84'
+                                                     onChange={this.onHeightChangeHandler.bind(this)}/>
                 <h2>BMI: {bmi}</h2>
             </div>
         )
@@ -24,11 +31,11 @@ export class Bmi extends React.Component<{stateRepresentation: StateBmi}, {}> {
 
     onHeightChangeHandler(evt) {
         evt.preventDefault();
-        this.props.stateRepresentation.actions.weightOrHeightChange({height:evt.target.value});
+        this.props.stateRepresentation.actions.weightOrHeightChange({height: evt.target.value});
     }
 
     onWeightChangeHandler(evt) {
         evt.preventDefault();
-        this.props.stateRepresentation.actions.weightOrHeightChange({weight:evt.target.value});
+        this.props.stateRepresentation.actions.weightOrHeightChange({weight: evt.target.value});
     }
 }
