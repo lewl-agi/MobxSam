@@ -1,7 +1,7 @@
 /**
  * Created by lewl on 11/5/2016.
  */
-// Actions are pure functions that respond to 'intents' from the the user or elsewhere. Here, Actions are
+// Actions are pure functions that respond to 'intents ' from the the user or elsewhere. Here, Actions are
 // invoked by the React Components. For example see (this.props.stateRepresentation.actions.start({});)
 // Actions then action.present(data) to the model via the function passed in via setPresent(p).
 // See the SamFactory for that wiring.
@@ -13,7 +13,7 @@ export class Actions {
 
     }
 
-    // Called via the SamFactory:
+    // Called via the SamFactory test:
     setPresent(present: (data: any) => void) {
         this._present = present;
     }
